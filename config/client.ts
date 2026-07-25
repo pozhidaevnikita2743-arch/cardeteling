@@ -59,6 +59,10 @@ export interface ClientConfig {
   };
 }
 
+// next/image с unoptimized:true не добавляет basePath сам — префиксуем
+// статические ассеты вручную (пусто на Vercel, "/cardeteling" на GitHub Pages)
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const clientConfig: ClientConfig = {
   companyName: "Detail Studio",
   niche: "детейлинг",
@@ -79,8 +83,8 @@ export const clientConfig: ClientConfig = {
       "Профессиональный детейлинг в Челябинске: полировка кузова, керамическое покрытие, оклейка плёнкой и химчистка салона. Более 200 автомобилей в работе и гарантия на все виды покрытий.",
     ctaText: "Оставить заявку на оклейку",
     photoSrc: undefined,
-    baseImage: "/car/base.webp",
-    wrapImage: "/car/wrap.webp",
+    baseImage: `${BASE_PATH}/car/base.webp`,
+    wrapImage: `${BASE_PATH}/car/wrap.webp`,
     blurData:
       "data:image/webp;base64,UklGRloBAABXRUJQVlA4WAoAAAAQAAAAEwAACQAAQUxQSJ8AAAABgJpt27Ll/vT/gQl+BoDm3twdskt1J9kUdJLDEDSSW2IC9+d53hufISISP36IjIqesZnpkfoIIQA/ANB8wd+HOQjgA17WBmmqIqq87YaPwrWjZzpzvz/4lMKqkRRH0jnSmbI1m3xXc450TlWM71bd4d5FRFXNGUne8jou41/hze5ceWqpHl7JwOL6/vH56RMPMvC/HwVlo5kIw8APAwAAVlA4IJQAAAAwBACdASoUAAoAPtFUo0uoJKMhsAgBABoJaQAD4/HcBdh1wNbrqudsoqAA/mubP5Rti5eupineqGdPMVbbes6fyS+sZDB54OLwXDznfdZLPuwNsRraHHqbBIpSwwPYUpNA1xC7q7+Yvo9XPHIIDS6F4/JGbj/TQ99pq4zyp9xEzan5/F1bWe72sOa9gI/V6jbzhAAA",
   },
@@ -108,8 +112,8 @@ export const clientConfig: ClientConfig = {
     { caption: "До / После — капот" },
     {
       caption: "До / После — кузов",
-      beforeSrc: "/car/base.webp",
-      afterSrc: "/car/wrap.webp",
+      beforeSrc: `${BASE_PATH}/car/base.webp`,
+      afterSrc: `${BASE_PATH}/car/wrap.webp`,
     },
     { caption: "Салон после химчистки" },
     { caption: "Керамика в работе" },
