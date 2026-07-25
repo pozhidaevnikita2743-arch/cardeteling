@@ -1,7 +1,7 @@
 .stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 751 / 379;
+  aspect-ratio: 721 / 349;
   isolation: isolate;
 }
 
@@ -16,10 +16,10 @@
 .groundShadow {
   position: absolute;
   z-index: 0;
-  left: 10%;
-  right: 12%;
-  bottom: 4%;
-  height: 11%;
+  left: 6%;
+  right: 8%;
+  bottom: 1%;
+  height: 8%;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.28) 45%, transparent 75%);
   filter: blur(6px);
 }
@@ -60,6 +60,10 @@
   letter-spacing: 0.02em;
   pointer-events: none;
   white-space: nowrap;
+}
+
+.hintTextMobile {
+  display: none;
 }
 
 .done {
@@ -133,9 +137,24 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
+@media (max-width: 900px) {
+  /* подсказка уходит под машину, а не поверх неё, и говорит про палец, не курсор */
+  .hint {
+    top: calc(100% + 14px);
+    bottom: auto;
+  }
+
+  .hintTextDesktop {
+    display: none;
+  }
+
+  .hintTextMobile {
+    display: inline;
+  }
+}
+
 @media (max-width: 640px) {
   .hint {
     font-size: 0.76rem;
-    bottom: 12px;
   }
 }

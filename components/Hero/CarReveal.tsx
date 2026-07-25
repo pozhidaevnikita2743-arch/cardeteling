@@ -410,7 +410,8 @@ export default function CarReveal({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          Проведите курсором по машине
+          <span className={styles.hintTextDesktop}>Проведите курсором по машине</span>
+          <span className={styles.hintTextMobile}>Проведите пальцем по машине</span>
         </motion.div>
       )}
 
