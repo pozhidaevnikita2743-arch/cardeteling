@@ -1,0 +1,95 @@
+.section {
+  padding: var(--space-section) 0;
+  background: var(--color-primary);
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-light);
+  margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  background: rgba(245, 243, 238, 0.03);
+  border: 1px solid rgba(245, 243, 238, 0.08);
+  border-radius: var(--radius);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  padding: 28px 24px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* металлик-полоса сверху, проявляется при наведении — срезанный уголок кузовной панели */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--gradient-metallic);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(169, 183, 194, 0.4);
+  background: rgba(245, 243, 238, 0.05);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -18px rgba(169, 183, 194, 0.5);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardIndex {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(245, 243, 238, 0.3);
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(169, 183, 194, 0.16), rgba(169, 183, 194, 0.04));
+  border: 1px solid rgba(169, 183, 194, 0.25);
+  color: var(--color-accent);
+  margin-bottom: 18px;
+}
+
+.cardIcon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: 10px;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(245, 243, 238, 0.65);
+}

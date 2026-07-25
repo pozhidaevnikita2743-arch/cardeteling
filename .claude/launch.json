@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "detailing-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "E:/Projects/karkas-dlya-deytelinga",
+      "port": 3000
+    }
+  ]
+}

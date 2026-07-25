@@ -1,0 +1,87 @@
+.footer {
+  position: relative;
+  padding: 40px 0;
+  background: var(--color-primary);
+  overflow: hidden;
+}
+
+/* лёгкое металлик-свечение для атмосферы — без жёсткой линии-разделителя */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(60% 140% at 85% 0%, rgba(169, 183, 194, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  font-weight: 600;
+  color: var(--color-light);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: rgba(245, 243, 238, 0.65);
+}
+
+.links a:hover {
+  color: var(--color-accent);
+}
+
+.phoneLink {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.city {
+  color: rgba(245, 243, 238, 0.45);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: rgba(245, 243, 238, 0.35);
+}
+
+.privacy {
+  font-size: 0.8rem;
+  color: rgba(245, 243, 238, 0.45);
+  transition: color 0.2s ease;
+}
+
+.privacy:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

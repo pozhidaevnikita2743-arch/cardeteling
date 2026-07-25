@@ -1,0 +1,75 @@
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+.image {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.beforeLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-metallic);
+  box-shadow: 0 0 10px rgba(169, 183, 194, 0.6);
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.handleGrip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gradient-metallic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.handleGrip svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.tagBefore,
+.tagAfter {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-light);
+  background: rgba(8, 11, 15, 0.55);
+  padding: 4px 9px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.tagBefore {
+  left: 10px;
+}
+
+.tagAfter {
+  right: 10px;
+}

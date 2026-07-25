@@ -1,0 +1,22 @@
+:root {
+  --color-primary: #0f1720;
+  --color-accent: #a9b7c2;
+  --color-dark: #080b0f;
+  --color-light: #f5f3ee;
+  --color-bg: #0a0d11;
+
+  /* металлик-акцент: диагональный блик как на шлифованном металле */
+  --gradient-metallic: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 100%, white 45%) 0%,
+    var(--color-accent) 35%,
+    color-mix(in srgb, var(--color-accent) 100%, black 15%) 55%,
+    color-mix(in srgb, var(--color-accent) 100%, white 30%) 100%
+  );
+
+  --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+
+  --container-width: 1160px;
+  --space-section: clamp(64px, 10vw, 140px);
+  --radius: 14px;
+}

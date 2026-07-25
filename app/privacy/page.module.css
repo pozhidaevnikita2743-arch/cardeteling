@@ -1,0 +1,48 @@
+.section {
+  padding: 120px 0 var(--space-section);
+  background: var(--color-primary);
+  min-height: 100svh;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-size: 0.9rem;
+  color: rgba(245, 243, 238, 0.6);
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: var(--color-accent);
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-light);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.body {
+  max-width: 720px;
+  color: rgba(245, 243, 238, 0.75);
+  line-height: 1.7;
+}
+
+.body h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin: 28px 0 10px;
+}
+
+.body p {
+  margin-bottom: 14px;
+}
+
+.note {
+  margin-top: 24px;
+  opacity: 0.55;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,38 @@
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(169, 183, 194, 0.16), rgba(169, 183, 194, 0.04));
+  border: 1px solid rgba(169, 183, 194, 0.25);
+  color: var(--color-accent);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.icon svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+}
+
+.vkText {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.icon:hover {
+  background: var(--gradient-metallic);
+  border-color: transparent;
+  color: var(--color-dark);
+  transform: translateY(-2px);
+}
