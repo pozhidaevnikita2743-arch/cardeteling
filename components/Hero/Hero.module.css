@@ -282,6 +282,9 @@
   .carCol {
     max-width: none;
     margin-left: 0;
+    /* машина bleed-ит к краям экрана — так же, как на десктопе */
+    width: calc(100% + 48px);
+    margin-inline: -24px;
   }
 
   .textCol {

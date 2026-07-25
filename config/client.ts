@@ -82,7 +82,7 @@ export const clientConfig: ClientConfig = {
     baseImage: "/car/base.webp",
     wrapImage: "/car/wrap.webp",
     blurData:
-      "data:image/webp;base64,UklGRggBAABXRUJQVlA4WAoAAAAQAAAAEwAACAAAQUxQSG8AAAABcFpt27I8nzS8EtnAvWtyh0Ry2YB1yIzBFhrd7SnYCBExAXgrNN4qfJYSsEXL9awD4hNgacxI8tiEfCMRmazIx+18ftIHBUAIw5q83m4vkgy+g2m6JcnneJjqCXzUdmc0Ocrjr0or/YWQSmmt8BkAVlA4IHIAAAAwAwCdASoUAAkAPtFUo0uoJKMhsAgBABoJZQAD4zE0cApgAPxdzI2ktDqAZ8fhXH4bVnPX8r067ZZ2oUQ3ZmopNg/5/2sy5NMKMQN16O7Gujif3uVFJHvrvfbU58uxj8O1w0gfM+P//36OsKBU/rXMAAA=",
+      "data:image/webp;base64,UklGRlIBAABXRUJQVlA4WAoAAAAQAAAAEwAACQAAQUxQSJsAAAABgFpt2/Lm+SCK0fEMsTnZIS4DpOBpgMoqxglyOgQPgI6ryDF98D7lrhARiR8W0MVqs14GtAKgrAEKM0fX908Pt3tDAKAB6KFj/l7LaYVkf3BE+hhFYgxvXIFqn5AMkaSISHTh2GKDrz6ICEWcj2TYM/aSIXjnXIhC8uqck8DA8ff6WCdT7qYAVW/1RqcXZnfvpvC/rsAkjFJWAQBWUDggkAAAAPADAJ0BKhQACgA+0VSjS6gkoyGwCAEAGglpAAPh4dlzlGOg7ALU0AAA/lqnhUz3eSucNJ6VkIGjdvFgAj1C3SmUaPTaIuvxNdkzzBrMphZ8t1m9ng6fdzYX1QYqP4gtqsOCj2rJ+/d72sCjTTb6wIk9ikzifis25/6Ocfg6/5/xMfYuc7z4Xrf/KFPj2wEAAA==",
   },
 
   services: [

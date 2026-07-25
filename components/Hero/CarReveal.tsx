@@ -15,7 +15,7 @@ interface CarRevealProps {
 
 const COMPLETE_THRESHOLD = 0.65;
 // Прямоугольник, приближающий силуэт машины в кадре (доли от размера)
-const ROI = { x0: 0.05, y0: 0.07, x1: 0.98, y1: 0.93 };
+const ROI = { x0: 0.02, y0: 0.04, x1: 0.98, y1: 0.96 };
 
 export default function CarReveal({
   baseSrc,
@@ -53,9 +53,26 @@ export default function CarReveal({
     if (!canvas || !mask || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    // повторяем CSS object-fit:cover при отрисовке в canvas, чтобы картинка
+    // не растягивалась, если пропорции контейнера отличаются от 1185:560
+    const srcW = wrap.naturalWidth || wrap.width;
+    const srcH = wrap.naturalHeight || wrap.height;
+    const srcRatio = srcW / srcH;
+    const dstRatio = canvas.width / canvas.height;
+    let sx = 0;
+    let sy = 0;
+    let sw = srcW;
+    let sh = srcH;
+    if (srcRatio > dstRatio) {
+      sw = srcH * dstRatio;
+      sx = (srcW - sw) / 2;
+    } else {
+      sh = srcW / dstRatio;
+      sy = (srcH - sh) / 2;
+    }
     ctx.globalCompositeOperation = "source-over";
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(wrap, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(wrap, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
     ctx.globalCompositeOperation = "destination-in";
     ctx.drawImage(mask, 0, 0, canvas.width, canvas.height);
     ctx.globalCompositeOperation = "source-over";
